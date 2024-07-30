@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
   separator: {
-    marginTop: 10,
+    marginBottom: 10,
   },
 });
 const RepositoryItem = ({
