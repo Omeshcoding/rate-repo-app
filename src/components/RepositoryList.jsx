@@ -1,6 +1,7 @@
 import { FlatList, StyleSheet, View } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 import Constants from 'expo-constants';
+import theme from '../theme';
 const repositories = [
   {
     id: 'jaredpalmer.formik',
@@ -39,7 +40,7 @@ const repositories = [
     id: 'reduxjs.redux',
     fullName: 'reduxjs/redux',
     description: 'Predictable state container for JavaScript apps',
-    language: 'TypeScript',
+    language: 'Redux',
     forksCount: 13902,
     stargazersCount: 52869,
     ratingAverage: 0,
@@ -51,6 +52,7 @@ const repositories = [
 const styles = StyleSheet.create({
   separator: {
     height: 10,
+    backgroundColor: theme.colors.primaryBackGround,
   },
   container: {
     flexGrow: 1,
