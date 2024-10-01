@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
   titleText: {
     color: theme.colors.textWhite,
     fontSize: theme.fontSizes.tabTitle,
-    paddingVertical: 20,
-    paddingLeft: 26,
+    paddingVertical: 16,
+    paddingLeft: 10,
     fontWeight: theme.fontWeights.bold,
   },
 });
