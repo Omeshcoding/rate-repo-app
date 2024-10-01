@@ -2,6 +2,7 @@ import { View, StyleSheet, Pressable, Text } from 'react-native';
 import Constants from 'expo-constants';
 import theme from '../theme';
 import AppBarTab from './AppBarTab';
+import { ScrollView } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight,
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
   titleText: {
     color: theme.colors.textWhite,
     fontSize: theme.fontSizes.tabTitle,
-    paddingVertical: 40,
+    paddingVertical: 20,
     paddingLeft: 26,
     fontWeight: theme.fontWeights.bold,
   },
@@ -20,7 +21,9 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <AppBarTab styles={styles.titleText} />
+      <ScrollView horizontal>
+        <AppBarTab styles={styles.titleText} />
+      </ScrollView>
     </View>
   );
 };

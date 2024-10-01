@@ -1,11 +1,21 @@
 import React from 'react';
-import { Pressable, Text } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
+import { Link } from 'react-router-native';
 
 const AppBarTab = ({ styles }) => {
   return (
-    <Pressable>
-      <Text style={styles}>Repositories</Text>
-    </Pressable>
+    <View style={{ display: 'flex', flexDirection: 'row' }}>
+      <Pressable>
+        <Link to="/" style={styles}>
+          <Text style={styles}>Repositories</Text>
+        </Link>
+      </Pressable>
+      <Pressable>
+        <Link to="/signin" style={styles}>
+          <Text style={styles}>Sign In</Text>
+        </Link>
+      </Pressable>
+    </View>
   );
 };
 
