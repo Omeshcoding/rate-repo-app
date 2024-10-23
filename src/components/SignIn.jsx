@@ -3,6 +3,7 @@ import Text from './Text';
 import { useFormik } from 'formik';
 import theme from '../theme';
 import * as yup from 'yup';
+import useSignIn from '../hooks/useSignIn';
 
 const initialValues = {
   username: '',
@@ -10,7 +11,7 @@ const initialValues = {
 };
 
 const validationSchema = yup.object().shape({
-  username: yup.string().email().required('Username is required'),
+  username: yup.string().required('Username is required'),
   password: yup
     .string()
     .min(8, 'Password must be greater than 8 characters')
@@ -84,10 +85,18 @@ const SignInForm = ({ onSubmit }) => {
 };
 
 const SignIn = () => {
-  const onSubmit = (values) => {
-    console.log(2, values);
-  };
+  const [signIn] = useSignIn();
+  // console.log(useSignIn());
 
+  const onSubmit = async (values) => {
+    const { username, password } = values;
+    try {
+      const { data } = await signIn({ username, password });
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
   return <SignInForm onSubmit={onSubmit} />;
 };
 
