@@ -5,13 +5,12 @@ class AuthStorage {
   }
   async getAccessToken() {
     const token = await AsyncStorage.getItem(`${this.namespace}:accessToken`);
-    console.log(token);
     return token ? token : null;
   }
   async setAccessToken(accessToken) {
     try {
       await AsyncStorage.setItem(`${this.namespace}:accessToken`, accessToken);
-      console.log('success');
+      console.log('successfully saved the token');
     } catch (e) {
       console.error('Failed to save the access token', e);
     }
