@@ -26,3 +26,12 @@ export const SIGN_IN = gql`
     }
   }
 `;
+
+export const SIGN_OUT = gql`
+  query Sign_out($id: id, $username: username) {
+    me {
+      id
+      username
+    }
+  }
+`;
