@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import theme from '../theme';
+import CountItem from './CountItem';
 
 const styles = StyleSheet.create({
   separator: {
@@ -30,6 +31,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginHorizontal: 4,
     marginTop: 10,
+  },
+  countItem: {
+    flexGrow: 0,
+    algignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 15,
   },
 });
 const RepositoryItem = ({
@@ -67,10 +74,10 @@ const RepositoryItem = ({
         </View>
       </View>
       <View style={styles.stats}>
-        <Text> {stargazersCount}</Text>
-        <Text> {forksCount}</Text>
-        <Text> {reviewCount}</Text>
-        <Text> {ratingAverage}</Text>
+        <CountItem styles={styles} label="Stars" count={stargazersCount} />
+        <CountItem styles={styles} label="Forks" count={forksCount} />
+        <CountItem styles={styles} label="Reviews" count={reviewCount} />
+        <CountItem styles={styles} label="Rating" count={ratingAverage} />
       </View>
     </View>
   );
