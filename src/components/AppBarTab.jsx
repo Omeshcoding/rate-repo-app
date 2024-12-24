@@ -13,7 +13,9 @@ const AppBarTab = ({ styles, isSignedIn, handleSignOut }) => {
 
       {!isSignedIn ? (
         <Pressable style={styles}>
-          <Text style={styles}>Sign In </Text>
+          <Link to="/signin">
+            <Text style={styles}>Sign In </Text>
+          </Link>
         </Pressable>
       ) : (
         <Pressable onPress={() => handleSignOut()} style={styles}>
