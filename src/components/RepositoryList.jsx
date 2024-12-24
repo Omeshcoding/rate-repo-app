@@ -1,5 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native';
-import RepositoryItem from './RepositoryItem';
+import { StyleSheet } from 'react-native';
 import theme from '../theme';
 import useRepositories from '../hooks/useRepositories';
 import { RepositoryListContainer } from './RepositoryListContainer';
