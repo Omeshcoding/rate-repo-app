@@ -39,18 +39,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
 });
-const RepositoryItem = ({
-  fullName,
-  description,
-  language,
-  forksCount,
-  stargazersCount,
-  ratingAverage,
-  reviewCount,
-  ownerAvatarUrl,
-}) => {
+const RepositoryItem = ({ repositories }) => {
+  const {
+    fullName,
+    description,
+    language,
+    forksCount,
+    stargazersCount,
+    ratingAverage,
+    reviewCount,
+    ownerAvatarUrl,
+  } = repositories;
   return (
-    <View style={styles.separator}>
+    <View testID="repositoryItem" style={styles.separator}>
       <View style={styles.flexItem}>
         <Image source={{ uri: ownerAvatarUrl }} style={styles.imageStyle} />
         <View style={{ flex: 1, gap: 10 }}>
